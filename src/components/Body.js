@@ -1,16 +1,7 @@
 import React from "react";
 
-function Body({ value, handleClickPath }) {
-  return (
-    <div className="square">
-      <img
-        className="prop-item"
-        src={value}
-        alt="test"
-        onClick={() => handleClickPath}
-      />
-    </div>
-  );
+function Body({ value }) {
+  return <img className="prop-item" src={value} alt="test" height="60" />;
 }
 
 export default Body;
