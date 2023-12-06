@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Avatar from "./Avatar";
+import Avatar from "./components/Avatar";
 
 function App() {
   return (

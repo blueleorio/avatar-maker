@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./App.css";
 import Body from "./Body";
 
 function Avatar() {
-  const [body, setBody] = useState("/character/body/");
+  const [body, setBody] = useState(0);
 
   const pathBody = "/character/body/1.png";
   const count = {
@@ -27,18 +26,19 @@ function Avatar() {
     noses: 1,
   };
 
-  const handleClick = (e) => {
-    console.log(e.target.getAttribute("src"));
+  const handleClickPath = () => {
+    console.log(this.target.getAttribute("src"));
+    setBody(this.target.getAttribute("src"));
   };
-
   return (
     <div className="avatar-wrapper">
       <div className="avatar">
         <img src={pathBody} alt="body-1" />
       </div>
       <div className="list-container">
-        <Body handleClick={handleClick} />
+        <Body value={"./character/body/2.png"} handleClick={handleClickPath} />
       </div>
+      <button onClick={() => console.log({ body })}>TEST</button>
     </div>
   );
 }

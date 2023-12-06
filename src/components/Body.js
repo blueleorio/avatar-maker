@@ -1,13 +1,13 @@
 import React from "react";
 
-function Body(handleClick) {
+function Body({ value, handleClickPath }) {
   return (
     <div className="square">
       <img
         className="prop-item"
-        src="./character/body/1.png"
+        src={value}
         alt="test"
-        onClick={() => handleClick}
+        onClick={() => handleClickPath}
       />
     </div>
   );
