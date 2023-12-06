@@ -6,3 +6,10 @@
 .container {
   border: 1px solid black;
 }
+
+.avatar-wrapper {
+  display: flex;
+  border: 1px dashed red;
+  align-items: center;
+  justify-content: center;
+}
