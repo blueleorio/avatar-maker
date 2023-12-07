@@ -5,6 +5,7 @@
 }
 .container {
   border: 1px solid black;
+  background-color: burlywood;
 }
 
 .avatar-wrapper {
@@ -12,4 +13,36 @@
   border: 1px dashed red;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.avatar-item {
+  position: absolute;
+}
+
+#body {
+  z-index: 0;
+}
+
+#layer_2 {
+  z-index: 2;
+}
+#layer_3 {
+  z-index: 3;
+}
+#earrings,
+#glasses,
+#hats,
+#neckwear {
+  z-index: 4;
+}
+
+#eyebrows,
+#eyes,
+#facial_hair,
+#hair,
+#mouths,
+#noses,
+#layer1 {
+  z-index: 1;
 }

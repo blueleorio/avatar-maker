@@ -1,37 +1,54 @@
 import React, { useState } from "react";
-import Part from "./Part";
 
-function Avatar() {
-  const [body, setBody] = useState(0);
-  const set = {
-    accessories: {
-      earrings: 0,
-      glasses: 0,
-      hats: 0,
-      neckwear: 0,
-    },
-    clothes: {
-      layer1: 0,
-      layer2: 0,
-      layer3: 0,
-    },
-    body: 0,
-    eyebrows: 0,
-    eyes: 0,
-    facial_hair: 0,
-    hair: 0,
-    mouth: 0,
-    noses: 0,
+function Avatar({ avatars }) {
+  const defaultSet = {
+    "accessories/earrings": 1,
+    "accessories/glasses": 1,
+    "accessories/hats": 1,
+    "accessories/neckwear": 1,
+    "clothes/layer_1": 1,
+    "clothes/layer_2": 1,
+    "clothes/layer_3": 1,
+    body: 1,
+    eyebrows: 1,
+    eyes: 1,
+    facial_hair: 1,
+    hair: 1,
+    mouths: 1,
+    noses: 1,
   };
 
-  const handleClickPath = () => {
-    console.log(this.target.getAttribute("src"));
-    setBody(this.target.getAttribute("src"));
-  };
+  const updatedAvatars = { ...defaultSet };
+
+  Object.keys(updatedAvatars).forEach((key, index) => {
+    updatedAvatars[key] = avatars[index];
+  });
+
+  const url = "/character/";
+
+  function convertToValidId(key) {
+    // Remove everything before and including the last slash
+    return key.replace(/.*\//, "");
+  }
+
+  const handleChange = () => {};
+
   return (
     <div className="avatar-wrapper">
-      <div className="avatar">{set.map((part) => (<Part key={part.index} value={Sth i have no fking idea}/>))}</div>
-      <button onClick={() => console.log({ body })}>TEST</button>
+      {Object.entries(updatedAvatars).map(([part, value], index) => {
+        const validId = convertToValidId(part);
+
+        return (
+          <img
+            key={index}
+            id={validId}
+            className={`avatar-item`}
+            src={`${url}${part}/${value}.png`}
+            alt={`${part}`}
+            height="120"
+          />
+        );
+      })}
     </div>
   );
 }

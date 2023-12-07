@@ -1,25 +1,24 @@
-import React, { useState } from "react";
-// import Body from "./Body";
+import React from "react";
 
-function BodyList({ count, handleClick }) {
-  const listBody = Array.from({ length: count }, (_, index) => ({
-    index: index + 1,
-  }));
-  const url = "/character/body/";
-  const [selected, setSelected] = useState("");
+function BodyList({ category, count, handleClick, index }) {
+  const url = "/character/";
 
   return (
-    <div className="list">
-      {listBody.map((body) => (
-        <img
-          key={body.index}
-          className={`prop-item ${selected}`}
-          src={`${url}${body.index}.png`}
-          alt={`body-${body.index}`}
-          height="60"
-          onClick={() => handleClick}
-        />
-      ))}
+    <div className={category}>
+      <div className="category-box">
+        <h2>{category}</h2>
+
+        {[...Array(count)].map((_, imgIndex) => (
+          <img
+            key={imgIndex + 1}
+            className="prop-item"
+            src={`${url}${category}/${imgIndex + 1}.png`}
+            alt={`${imgIndex + 1}`}
+            height="60"
+            onClick={(e) => handleClick(e, index)}
+          />
+        ))}
+      </div>
     </div>
   );
 }
