@@ -1,16 +1,24 @@
-import React from "react";
-import Body from "./Body";
+import React, { useState } from "react";
+// import Body from "./Body";
 
-function BodyList({ count }) {
+function BodyList({ count, handleClick }) {
   const listBody = Array.from({ length: count }, (_, index) => ({
     index: index + 1,
   }));
   const url = "/character/body/";
+  const [selected, setSelected] = useState("");
 
   return (
     <div className="list">
       {listBody.map((body) => (
-        <Body key={body.index} value={`${url}${body.index}.png`} />
+        <img
+          key={body.index}
+          className={`prop-item ${selected}`}
+          src={`${url}${body.index}.png`}
+          alt={`body-${body.index}`}
+          height="60"
+          onClick={() => handleClick}
+        />
       ))}
     </div>
   );

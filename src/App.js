@@ -24,11 +24,15 @@ function App() {
     mouth: 24,
     noses: 1,
   };
+
+  const handleClick = (e) => {
+    const path = e.target.getAttribute("src");
+  };
   return (
     <div className="container">
       <h1>Avatar</h1>
       <Avatar />
-      <BodyList count={count.body} />
+      <BodyList count={count.body} handleClick={handleClick} />
     </div>
   );
 }
