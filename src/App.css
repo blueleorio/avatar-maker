@@ -8,18 +8,37 @@
   background-color: burlywood;
 }
 
-.avatar-wrapper {
+.avatar {
   display: flex;
-  border: 1px dashed red;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: aquamarine;
+  /* position: fixed; */
+}
+.avatar-wrapper {
   position: relative;
+  padding: 150px;
+  border: 1px dashed red;
 }
 
 .avatar-item {
   position: absolute;
+  border: 1px dashed black;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
 }
 
+.category-box {
+  border: 1px solid blue;
+}
+
+.prop-item {
+  border: 0.5px solid black;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding: 3px;
+}
 #body {
   z-index: 0;
 }

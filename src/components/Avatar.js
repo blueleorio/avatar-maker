@@ -45,7 +45,7 @@ function Avatar({ avatars }) {
             className={`avatar-item`}
             src={`${url}${part}/${value}.png`}
             alt={`${part}`}
-            height="120"
+            height="240"
           />
         );
       })}

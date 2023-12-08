@@ -48,9 +48,11 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Avatar</h1>
-      <Avatar avatars={avatar} />
-      <button onClick={() => randomAva()}>RANDOMIZE SHIT</button>
+      <div className="avatar">
+        <h1>Avatar</h1>
+        <Avatar avatars={avatar} />
+        <button onClick={() => randomAva()}>RANDOMIZE SHIT</button>
+      </div>
       {Object.keys(categories).map((category, index) => (
         <BodyList
           key={category}
