@@ -4,10 +4,9 @@ function BodyList({ category, count, handleClick, index, selected }) {
   const url = "/character/";
 
   return (
-    <div className={category}>
+    <div className="category">
+      <h2>{category}</h2>
       <div className="category-box">
-        <h2>{category}</h2>
-
         {[...Array(count)].map((_, imgIndex) => (
           <img
             key={imgIndex + 1}

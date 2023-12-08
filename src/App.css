@@ -3,9 +3,11 @@
 *::before {
   box-sizing: border-box;
 }
+
 .container {
   border: 1px solid black;
   background-color: burlywood;
+  margin-top: 400px;
 }
 
 .avatar {
@@ -14,8 +16,11 @@
   align-items: center;
   justify-content: center;
   background-color: aquamarine;
-  /* position: fixed; */
+  position: fixed;
+  width: 100vw;
+  transform: translateY(-410px);
 }
+
 .avatar-wrapper {
   position: relative;
   padding: 150px;
@@ -29,20 +34,32 @@
   transform: translate(-50%, -50%);
 }
 
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .category-box {
   border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .prop-item {
   border: 0.5px solid black;
   border-radius: 5px;
-  margin-left: 5px;
+  margin: 5px;
   padding: 3px;
 }
 
 .selected {
   background-color: gray;
 }
+
 #body {
   z-index: 0;
 }
@@ -50,9 +67,11 @@
 #layer_2 {
   z-index: 2;
 }
+
 #layer_3 {
   z-index: 3;
 }
+
 #earrings,
 #glasses,
 #hats,
