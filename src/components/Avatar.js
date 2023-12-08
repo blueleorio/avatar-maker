@@ -31,8 +31,6 @@ function Avatar({ avatars }) {
     return key.replace(/.*\//, "");
   }
 
-  const handleChange = () => {};
-
   return (
     <div className="avatar-wrapper">
       {Object.entries(updatedAvatars).map(([part, value], index) => {

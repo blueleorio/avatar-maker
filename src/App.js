@@ -27,20 +27,21 @@ function App() {
 
   const handleClick = (e, index) => {
     const num = e.target.getAttribute("alt");
-    // const index = e.target.getAttribute("alt");
+
     console.log("Clicked image num:", num);
-    console.log("Clicked image index:", index);
+    console.log("Clicked Category index:", index);
     const updatedAvatars = avatar.slice();
     updatedAvatars[index] = num;
     setAvatar(updatedAvatars);
-    // Do whatever you need with the path, e.g., update state, send to server, etc.
   };
 
   const randomAva = () => {
     const randomArray = Object.keys(categories).map((category) => {
       const defaultValue = categories[category];
       const randomValue = Math.round(Math.random() * defaultValue);
-      return Math.max(1, Math.min(randomValue, defaultValue));
+      const result = Math.max(1, Math.min(randomValue, defaultValue));
+
+      return result;
     });
 
     setAvatar(randomArray);
@@ -60,6 +61,7 @@ function App() {
           count={categories[category]}
           handleClick={handleClick}
           index={index}
+          selected={avatar[index]}
         />
       ))}
     </div>

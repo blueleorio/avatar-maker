@@ -39,6 +39,10 @@
   margin-left: 5px;
   padding: 3px;
 }
+
+.selected {
+  background-color: gray;
+}
 #body {
   z-index: 0;
 }

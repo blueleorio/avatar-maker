@@ -1,6 +1,6 @@
 import React from "react";
 
-function BodyList({ category, count, handleClick, index }) {
+function BodyList({ category, count, handleClick, index, selected }) {
   const url = "/character/";
 
   return (
@@ -11,11 +11,15 @@ function BodyList({ category, count, handleClick, index }) {
         {[...Array(count)].map((_, imgIndex) => (
           <img
             key={imgIndex + 1}
-            className="prop-item"
+            className={`prop-item ${
+              imgIndex + 1 === parseInt(selected, 10) ? "selected" : ""
+            }`}
             src={`${url}${category}/${imgIndex + 1}.png`}
             alt={`${imgIndex + 1}`}
             height="60"
-            onClick={(e) => handleClick(e, index)}
+            onClick={(e) => {
+              handleClick(e, index);
+            }}
           />
         ))}
       </div>
