@@ -1,28 +1,28 @@
 import React from "react";
 
 function Avatar({ avatars }) {
-  // const defaultSet = {
-  //   "accessories/earrings": 1,
-  //   "accessories/glasses": 1,
-  //   "accessories/hats": 1,
-  //   "accessories/neckwear": 1,
-  //   "clothes/layer_1": 1,
-  //   "clothes/layer_2": 1,
-  //   "clothes/layer_3": 1,
-  //   body: 1,
-  //   eyebrows: 1,
-  //   eyes: 1,
-  //   facial_hair: 1,
-  //   hair: 1,
-  //   mouths: 1,
-  //   noses: 1,
-  // };
+  const defaultSet = {
+    "accessories/earrings": 1,
+    "accessories/glasses": 1,
+    "accessories/hats": 1,
+    "accessories/neckwear": 1,
+    "clothes/layer_1": 1,
+    "clothes/layer_2": 1,
+    "clothes/layer_3": 1,
+    body: 1,
+    eyebrows: 1,
+    eyes: 1,
+    facial_hair: 1,
+    hair: 1,
+    mouths: 1,
+    noses: 1,
+  };
 
-  // const updatedAvatars = { ...defaultSet };
+  const updatedAvatars = { ...defaultSet };
 
-  // Object.keys(updatedAvatars).forEach((key, index) => {
-  //   updatedAvatars[key] = avatars[index];
-  // });
+  Object.keys(updatedAvatars).forEach((key, index) => {
+    updatedAvatars[key] = avatars[index];
+  });
 
   const url = "/character/";
 
@@ -33,7 +33,7 @@ function Avatar({ avatars }) {
 
   return (
     <div className="avatar-wrapper">
-      {Object.entries(avatars).map(([part, value], index) => {
+      {Object.entries(updatedAvatars).map(([part, value], index) => {
         const validId = convertToValidId(part);
 
         return (
